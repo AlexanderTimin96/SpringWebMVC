@@ -1,7 +1,7 @@
 package ru.netology.controller;
 
 import org.springframework.web.bind.annotation.*;
-import ru.netology.model.Post;
+import ru.netology.model.PostTDO;
 import ru.netology.service.PostService;
 
 import java.util.List;
@@ -16,17 +16,17 @@ public class PostController {
     }
 
     @GetMapping
-    public List<Post> all() {
+    public List<PostTDO> all() {
         return service.all();
     }
 
     @GetMapping("/{id}")
-    public Post getById(@PathVariable long id) {
+    public PostTDO getById(@PathVariable long id) {
         return service.getById(id);
     }
 
     @PostMapping
-    public Post save(@RequestBody Post post) {
+    public PostTDO save(@RequestBody PostTDO post) {
         return service.save(post);
     }
 

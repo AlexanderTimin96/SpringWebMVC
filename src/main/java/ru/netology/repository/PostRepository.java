@@ -39,6 +39,8 @@ public class PostRepository {
     }
 
     public void removeById(long id) {
-        posts.remove(id);
+        if (posts.containsKey(id)) {
+            posts.get(id).setRemoved(true);
+        }
     }
 }
